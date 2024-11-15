@@ -5,35 +5,35 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
-} from "../controllers/productController";
+} from "../controllers/ropaController";
 
-const productRoutes = Router();
+const ropaRoutes = Router();
 
 /**
  * @swagger
  * tags:
- *   name: Products
+ *   name: Ropa
  *   description: CRUD relacionado con productos
  */
 
 /**
  * @swagger
- * /api/products:
+ * /api/ropa:
  *   get:
  *     summary: Obtener todos los productos
- *     tags: [Products]
+ *     tags: [Ropa]
  *     responses:
  *       200:
  *         description: Lista de productos
  */
-productRoutes.get("/", getAllProducts);
+ropaRoutes.get("/", getAllProducts);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/ropa/{id}:
  *   get:
  *     summary: Obtener un producto por ID
- *     tags: [Products]
+ *     tags: [Ropa]
  *     parameters:
  *       - in: path
  *         name: id
@@ -47,14 +47,14 @@ productRoutes.get("/", getAllProducts);
  *       404:
  *         description: Producto no encontrado
  */
-productRoutes.get("/:id", getProductById);
+ropaRoutes.get("/:id", getProductById);
 
 /**
  * @swagger
- * /api/products:
+ * /api/ropa:
  *   post:
  *     summary: Crear un nuevo producto
- *     tags: [Products]
+ *     tags: [Ropa]
  *     requestBody:
  *       required: true
  *       content:
@@ -78,14 +78,14 @@ productRoutes.get("/:id", getProductById);
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.post("/", createProduct);
+ropaRoutes.post("/", createProduct);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/ropa/{id}:
  *   put:
  *     summary: Actualizar un producto existente
- *     tags: [Products]
+ *     tags: [Ropa]
  *     parameters:
  *       - in: path
  *         name: id
@@ -114,14 +114,14 @@ productRoutes.post("/", createProduct);
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.put("/:id", updateProduct);
+ropaRoutes.put("/:id", updateProduct);
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/ropa/{id}:
  *   delete:
  *     summary: Eliminar un producto
- *     tags: [Products]
+ *     tags: [Ropa]
  *     parameters:
  *       - in: path
  *         name: id
@@ -137,6 +137,6 @@ productRoutes.put("/:id", updateProduct);
  *       500:
  *         description: Error en el servidor
  */
-productRoutes.delete("/:id", deleteProduct);
+ropaRoutes.delete("/:id", deleteProduct);
 
-export default productRoutes;
+export default ropaRoutes;

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../data-source";
-import { Product } from "../entities/Ropa";
+import { Ropa } from "../entities/Ropa";
 
-const productRepository = AppDataSource.getRepository(Product);
+const productRepository = AppDataSource.getRepository(Ropa);
 
 // GET - Obtener Todos los Productos
 export const getAllProducts = async(red: Request, res: Response) => {
@@ -35,7 +35,7 @@ export const getProductById = async(req: Request, res: Response) => {
 export const createProduct = async(req: Request, res: Response) => {
   try {
     const { name, description, price } = req.body;
-    const product = new Product();
+    const product = new Ropa();
     product.name = name;
     product.description = description;
     product.price = price;
